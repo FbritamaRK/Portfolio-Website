@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           className="border-r-2 border-black px-4 sm:px-6 py-3 font-mono font-bold text-xs sm:text-sm tracking-wider flex items-center cursor-pointer select-none hover:bg-neutral-50 transition"
           id="nav-logo"
         >
-          <span>PORTFOLIO.DEV</span>
+          <span>FEBRITAMA.DEV</span>
         </div>
 
         {/* Desktop Navigation Links */}

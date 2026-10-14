@@ -1,11 +1,18 @@
 import React from 'react';
 import { SKILLS_DATA } from '../data/portfolioData';
+import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 export const SkillsSection: React.FC = () => {
+  const headerRef = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const gridRef = useStaggerAnimation<HTMLDivElement>({ staggerMs: 110 });
+
   return (
     <section id="keahlian" className="border-b-2 border-black px-6 py-8 sm:px-10 sm:py-10 bg-white">
       {/* Section Header */}
-      <div className="flex items-center pb-2 border-b-2 border-black mb-6">
+      <div
+        ref={headerRef}
+        className="animate-on-scroll anim-fade-left flex items-center pb-2 border-b-2 border-black mb-6"
+      >
         <span className="bg-black text-white px-2 py-0.5 font-mono text-xs sm:text-sm font-bold mr-2.5">
           02
         </span>
@@ -14,10 +21,10 @@ export const SkillsSection: React.FC = () => {
         </h2>
       </div>
 
-      {/* 3-Column Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* 4-Column Skills Grid */}
+      <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {SKILLS_DATA.map((col, colIdx) => (
-          <div key={colIdx} className="flex flex-col">
+          <div key={colIdx} className="animate-on-scroll anim-fade-up flex flex-col">
             {/* Column Header */}
             <div className="bg-black text-white text-center font-mono font-bold text-xs py-2 px-3 border-2 border-black tracking-wider uppercase">
               {col.title}

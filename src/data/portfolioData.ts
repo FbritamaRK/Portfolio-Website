@@ -1,153 +1,388 @@
-import { Project, SkillColumn, ExperienceItem, SocialLinkItem } from '../types';
+import { Project, SkillColumn, ExperienceItem, CertificationItem, SocialLinkItem } from '../types';
 
 export const HERO_DATA = {
-  status: '[STATUS: AVAILABLE FOR HIRE]',
+  status: '[STATUS: AVAILABLE FOR HIRE & COLLABORATION]',
   greeting: 'Halo, saya',
-  name: 'ALEX PRATAMA',
-  bio: 'Full-Stack Web Developer & Software Engineer yang berfokus pada arsitektur web modern, performa tinggi, dan pengalaman pengguna yang intuitif.',
+  name: 'FEBRITAMA RAKA QUALITA AKHSANA',
+  role: 'Full-Stack Web, Mobile & Game Developer',
+  specialization: 'UI/UX Design & Web Accessibility Specialist (WCAG 2.2 Level AA)',
+  bio: 'Lulusan Informatika Universitas Islam Indonesia berpengalaman teknis lintas platform dalam pengembangan Full-Stack Web, aplikasi Mobile, dan Game interaktif. Berfokus pada inovasi digital inklusif melalui integrasi desain UI/UX dan standar aksesibilitas internasional (WCAG 2.2 Level AA).',
+  location: 'Sleman, D.I. Yogyakarta 55584',
+  email: 'febriraka34@gmail.com',
+  phone: '+62 881 2625 922',
+  linkedin: 'https://linkedin.com/in/febritamaark/',
+  github: 'https://github.com/FbritamaRK',
+  cvDriveUrl: 'https://drive.google.com/drive/folders/12zl4iqQ76i23wDoYTdYwzo-exFyT6SC9?usp=drive_link', // Ganti dengan URL berkas Google Drive CV Anda
 };
 
 export const ABOUT_DATA = {
   sectionNumber: '01',
   title: 'TENTANG SAYA',
   paragraphs: [
-    'Saya adalah seorang pengembang perangkat lunak dengan pengalaman lebih dari 5 tahun dalam membangun aplikasi web berbasis cloud, sistem backend berskala besar, serta antarmuka pengguna yang terstruktur dan aksesibel.',
-    'Pendekatan rekayasa perangkat lunak saya menitikberatkan pada standar web terbuka, kode semantik yang bersih, efisiensi kinerja, dan arsitektur data yang tangguh untuk mendukung pertumbuhan produk secara berkelanjutan.',
+    'Lulusan Informatika dari Universitas Islam Indonesia (IPK 3.70 / 4.00, Cum Laude) dengan pengalaman teknis lintas platform dalam pengembangan Full-Stack Web, aplikasi Mobile, dan Game interaktif.',
+    'Berfokus pada penciptaan inovasi digital yang inklusif melalui integrasi desain UI/UX dan standar aksesibilitas internasional Web Content Accessibility Guidelines (WCAG) 2.2 Level AA, memastikan seluruh platform ramah bagi seluruh kalangan termasuk penyandang disabilitas.',
+    'Memiliki visi yang berorientasi ke depan untuk menggabungkan pendekatan human-centered dengan teknologi mutakhir, bertujuan merancang dan mengembangkan solusi perangkat lunak yang fungsional, adaptif, dan memberikan nilai tambah jangka panjang bagi industri teknologi.',
   ],
 };
 
 export const SKILLS_DATA: SkillColumn[] = [
   {
-    title: 'PENGEMBANGAN FRONTEND',
+    title: 'WEB & AKSESIBILITAS',
     skills: [
-      'HTML5 & Semantik Web',
-      'CSS3, Flexbox & CSS Grid',
+      'Web Design & Prototyping',
+      'HTML5 Semantik & CSS3',
       'JavaScript (ES6+) & TypeScript',
-      'React.js & Next.js',
-      'Aksesibilitas Web (WCAG/ARIA)',
+      'WCAG 2.2 Level AA Compliance',
+      'Usability Testing & Accessibility Audit',
     ],
   },
   {
-    title: 'PENGEMBANGAN BACKEND',
+    title: 'MOBILE & GAME DEV',
     skills: [
-      'Node.js & Express',
-      'Python & FastAPI',
-      'PostgreSQL & Redis',
-      'RESTful API & GraphQL',
+      'Android Development (Kotlin)',
+      'MVVM & Clean Architecture',
+      'Game Engine (Unity)',
+      'C# Programming',
+      'AI Pathfinding & Game Mechanics',
     ],
   },
   {
-    title: 'DEVOPS & PERKAKAS KERJA',
+    title: 'SOFTWARE & TOOLS',
     skills: [
-      'Git & GitHub Actions',
-      'Docker & Kubernetes',
-      'Linux / Shell Scripting',
-      'Vite, Webpack & CI/CD',
+      'Figma (UI/UX & Prototyping)',
+      'Microsoft Office Suite (Word, Excel, PPT)',
+      'Git & Version Control',
+      'Performance Optimization & Testing',
+      'Information Architecture',
+    ],
+  },
+  {
+    title: 'SOFT SKILLS & BAHASA',
+    skills: [
+      'Human-Centered Design',
+      'Analytical Thinking & Problem Solving',
+      'Teamwork & Communication',
+      'Responsibility & Discipline',
+      'Bahasa Indonesia (Native)',
+      'English (Upper-Intermediate, CEPT: 559)',
     ],
   },
 ];
 
 export const PROJECTS_DATA: Project[] = [
   {
-    id: 'project-1',
-    tag: '#PROJECT-01',
-    title: 'Platform Analitik SaaS Cloud',
+    id: 'project-dpmptsp',
+    tag: '#PROYEK-01',
+    title: 'DPMPTSP v2 Kab. Gunungkidul',
+    subtitle: 'Academic Project - Tugas Akhir S1 (Sept 2025 - July 2026)',
     description:
-      'Dashboard analitik real-time yang memproses jutaan metrik data harian dengan visualisasi interaktif dan sistem pelaporan otomatis.',
-    techStack: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL'],
-    demoUrl: 'https://demo.alexpratama.dev/saas-analytics',
-    repoUrl: 'https://github.com/alexpratama/saas-cloud-analytics',
-    metrics: '99.9% Uptime | <80ms Query Response | 1.2M Event / Hari',
+      'Perancangan ulang antarmuka pengguna (UI/UX) dan restrukturisasi arsitektur informasi situs resmi DPMPTSP Kabupaten Gunungkidul sebagai Proyek Tugas Akhir S1 berbasis standar aksesibilitas internasional.',
+    techStack: ['UI/UX Design', 'WCAG 2.2 Level AA', 'Web Development', 'Information Architecture', 'Usability Testing'],
+    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    repoUrl: 'https://github.com/FbritamaRK',
+    metrics: 'WCAG 2.2 Level AA Standard | Tugas Akhir S1 | Cum Laude GPA 3.70',
     highlights: [
-      'Visualisasi time-series dengan canvas terakselerasi',
-      'Sistem cache bertingkat memanfaatkan Redis',
-      'Ekspor laporan PDF & spreadsheet instan',
+      'Merancang ulang antarmuka pengguna (UI/UX) dan struktur informasi situs resmi DPMPTSP Kabupaten Gunungkidul',
+      'Mengimplementasikan standar internasional Web Content Accessibility Guidelines (WCAG) 2.2 Level AA agar inklusif bagi penyandang disabilitas',
+      'Memperbaiki sistem navigasi guna mempermudah masyarakat dalam mengakses informasi perizinan dan investasi secara transparan',
     ],
+    archTree: `├── ui-ux-design/
+│   ├── figma-wireframes/
+│   ├── design-system-tokens/
+│   └── user-flow-perizinan/
+├── accessibility-audit/
+│   ├── wcag-2.2-aa-checklist.xlsx
+│   ├── screen-reader-tests (NVDA/JAWS)
+│   └── color-contrast-ratios (>= 4.5:1)
+├── web-implementation/
+│   ├── semantic-html5-templates/
+│   ├── aria-live-announcements/
+│   └── responsive-navigation/
+└── usability-evaluation/
+    └── testing-reports/`,
+    archDescription:
+      'Penerapan metodologi Human-Centered Design dengan pemetaan alur pengguna yang inklusif, validasi kontras warna WCAG 2.2 Level AA, keyboard navigability penuh, dan pengujian kegunaan bagi pengguna publik.',
   },
   {
-    id: 'project-2',
-    tag: '#PROJECT-02',
-    title: 'E-Commerce Engine Berbasis Mikroservis',
+    id: 'project-mangrove-bleberan',
+    tag: '#PROYEK-02',
+    title: 'Platform Ekowisata Mangrove Bleberan',
+    subtitle: 'Organizational & Community Service - Kulon Progo (Jan 2026 - Mar 2026)',
     description:
-      'Sistem backend perdagangan elektronik performa tinggi dengan pengelolaan keranjang belanja, integrasi payment gateway, dan manajemen inventaris.',
-    techStack: ['Node.js', 'Docker', 'Redis', 'PostgreSQL'],
-    demoUrl: 'https://demo.alexpratama.dev/microservice-ecommerce',
-    repoUrl: 'https://github.com/alexpratama/ecommerce-engine-microservices',
-    metrics: '5.000 TPS Benchmark | PCI-DSS Compliant | Zero-Downtime Deployment',
+      'Platform web pusat informasi serta edukasi publik untuk Dusun Bleberan, Kulon Progo, guna mendukung potensi ekowisata dan konservasi hutan mangrove secara berkelanjutan.',
+    techStack: ['Full-Stack Web', 'JavaScript', 'HTML5 & CSS3', 'UI/UX Design', 'Community Collab'],
+    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    repoUrl: 'https://github.com/FbritamaRK',
+    metrics: 'Pusat Edukasi Publik | Konservasi Mangrove | Kolaborasi Komunitas KKN',
     highlights: [
-      'Event-driven architecture dengan Apache Kafka & RabbitMQ',
-      'Sistem lock terdistribusi untuk mencegah overselling',
-      'Webhook idempotency untuk konsistensi transaksi perbankan',
+      'Merancang dan menguji platform web pusat informasi serta edukasi publik untuk Dusun Bleberan, Kulon Progo',
+      'Membangun antarmuka yang ramah pengguna (user-friendly) untuk menyajikan dokumentasi lingkungan dan informasi ekologis',
+      'Berkolaborasi erat dengan komunitas lokal dan tim KKN untuk menjembatani komunikasi antara wisatawan, peneliti, dan warga setempat',
     ],
+    archTree: `├── client/
+│   ├── components/
+│   │   ├── EcoTourGallery/
+│   │   ├── MangroveEducation/
+│   │   └── VisitorInformation/
+│   └── styles/
+│       └── responsive-theme.css
+├── server/
+│   ├── controllers/contentController.js
+│   └── routes/apiRoutes.js
+├── content-assets/
+│   ├── environmental-docs/
+│   └── ecotourism-maps/
+└── docs/
+    └── kkn-community-report.pdf`,
+    archDescription:
+      'Arsitektur web berbasis modul konten yang ringan dan responsif, dioptimalkan untuk akses cepat masyarakat pedesaan maupun wisatawan menggunakan koneksi internet mobile.',
   },
   {
-    id: 'project-3',
-    tag: '#PROJECT-03',
-    title: 'Dokumentasi API & Komponen Desain',
+    id: 'project-recyclearn',
+    tag: '#PROYEK-03',
+    title: 'Recyclearn - Edukasi Pengelolaan Sampah',
+    subtitle: 'Mobile Team Project - Fufufafa Team (Oct 2024 - Jan 2025)',
     description:
-      'Situs portal dokumentasi teknis open-source dengan mesin pencarian cepat terindeks dan sistem playground kode interaktif.',
-    techStack: ['HTML5 Semantik', 'Vanilla JS', 'Web Components'],
-    demoUrl: 'https://demo.alexpratama.dev/api-docs-system',
-    repoUrl: 'https://github.com/alexpratama/api-docs-design-system',
-    metrics: 'Lighthouse 100/100 | <15kb Bundle JS | Tanpa dependensi pihak ketiga',
+      'Aplikasi mobile edukasi pengelolaan sampah berbasis Android menggunakan Kotlin dengan penerapan arsitektur modern (MVVM / Clean Architecture) dan navigasi interaktif.',
+    techStack: ['Android', 'Kotlin', 'MVVM', 'Clean Architecture', 'Mobile UI/UX', 'Testing'],
+    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    repoUrl: 'https://github.com/FbritamaRK',
+    metrics: 'MVVM Clean Architecture | Zero Crash Stability | 3 Kategori Sampah (Organik, Anorganik, B3)',
     highlights: [
-      'Fuzzy search berbasis Web Worker untuk pencarian sub-millisecond',
-      'Web Components terisolasi dengan Shadow DOM',
-      'Mendukung mode kontras tinggi dan pembaca layar (screen reader)',
+      'Mengembangkan aplikasi edukasi pengelolaan sampah Recyclearn berbasis Android Kotlin',
+      'Mengimplementasikan arsitektur Android modern (MVVM / Clean Architecture) untuk skalabilitas kode',
+      'Merancang dan mengimplementasikan UI interaktif serta navigasi intuitif untuk fitur klasifikasi sampah, materi edukasi, dan artikel',
+      'Melakukan pengujian fungsi dan optimasi performa untuk memastikan aplikasi responsif dan bebas crash',
     ],
+    archTree: `├── app/src/main/java/com/recyclearn/
+│   ├── presentation/
+│   │   ├── ui/
+│   │   │   ├── classification/ (Organik, Non-organik, B3)
+│   │   │   ├── education/
+│   │   │   └── articles/
+│   │   └── viewmodel/
+│   ├── domain/
+│   │   ├── model/WasteItem.kt
+│   │   └── usecase/GetWasteClassificationUseCase.kt
+│   └── data/
+│       ├── repository/WasteRepositoryImpl.kt
+│       └── datasource/local/WasteDao.kt
+└── app/src/test/
+    └── UnitAndPerformanceTests.kt`,
+    archDescription:
+      'Penerapan pola MVVM dengan pemisahan lapisan Presentasi, Domain, dan Data (Clean Architecture), memfasilitasi pengujian unit yang independen dan penanganan memori yang efisien.',
+  },
+  {
+    id: 'project-fight-for-castle',
+    tag: '#PROYEK-04',
+    title: "Fight for Castle: The Queen's Guard",
+    subtitle: 'Game Dev Team Project - Hexa (Sep 2024 - Jan 2025)',
+    description:
+      'Game strategi taktis bertema pertahanan istana yang dikembangkan menggunakan game engine Unity dan bahasa C#, mengintegrasikan sistem pertahanan dinamis dan AI pathfinding musuh.',
+    techStack: ['Unity Engine', 'C#', 'Game AI / Pathfinding', 'Defense System', 'Game UI/UX'],
+    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    repoUrl: 'https://github.com/FbritamaRK',
+    metrics: 'Unity Engine | Algoritma Pathfinding AI | Real-time Defense Mechanics',
+    highlights: [
+      'Berkonsentrasi dalam pengembangan game strategi "Fight for Castle: The Queen\'s Guard" menggunakan Unity & C#',
+      'Membangun mekanika gameplay, sistem pertahanan (defense system), dan algoritma logika pergerakan musuh (pathfinding/AI)',
+      'Merancang dan mengimplementasikan antarmuka pengguna (UI) intuitif untuk kenyamanan dan pengalaman bermain pengguna (UX)',
+    ],
+    archTree: `├── Assets/
+│   ├── Scripts/
+│   │   ├── AI/
+│   │   │   ├── EnemyPathfinding.cs
+│   │   │   └── EnemyStateMachine.cs
+│   │   ├── Gameplay/
+│   │   │   ├── DefenseSystem.cs
+│   │   │   ├── CastleHealthManager.cs
+│   │   │   └── WaveSpawner.cs
+│   │   └── UI/
+│   │       ├── HUDController.cs
+│   │       └── MenuNavigation.cs
+│   ├── Prefabs/
+│   │   ├── Units/
+│   │   └── Towers/
+│   └── Scenes/
+│       ├── MainMenu.unity
+│       └── BattleStage.unity`,
+    archDescription:
+      'Arsitektur berorientasi objek dalam Unity dengan pemisahan modul AI pathfinding berbasis grid, state machine musuh, dan controller pertahanan istana yang sinkron.',
   },
 ];
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
-    period: 'Januari 2022 - Sekarang',
-    periodStyle: 'highlight', // Yellow highlight badge
-    role: 'LEAD FULL-STACK ENGINEER',
-    company: 'TECH SOLUSI NUSANTARA',
+    period: 'Sept 2025 - July 2026',
+    periodStyle: 'highlight', // Yellow badge
+    role: 'UI/UX DESIGNER & WEB DEVELOPER (ACADEMIC PROJECT)',
+    company: 'PROJECT TUGAS AKHIR S1: DPMPTSP V2 GUNUNGKIDUL',
     description:
-      'Memimpin tim rekayasa frontend dan backend dalam perancangan arsitektur mikroservis, peningkatan skor performa Core Web Vitals hingga 95+, dan migrasi sistem cloud.',
+      'Perancangan ulang antarmuka pengguna (UI/UX) dan struktur informasi situs resmi DPMPTSP Kabupaten Gunungkidul sebagai Proyek Tugas Akhir S1. Mengimplementasikan standar internasional Web Content Accessibility Guidelines (WCAG) 2.2 Level AA untuk memastikan platform inklusif bagi penyandang disabilitas, serta memperbaiki sistem navigasi guna transparansi akses informasi perizinan dan investasi.',
+    bullets: [
+      'Perancangan Ulang UI/UX: Merancang antarmuka pengguna modern dan struktur informasi terpadu',
+      'Standar Aksesibilitas Web: Implementasi penuh standar internasional WCAG 2.2 Level AA',
+      'Aksesibilitas Informasi: Memperbaiki sistem navigasi untuk mempermudah perizinan & investasi',
+    ],
   },
   {
-    period: 'Juli 2019 - Desember 2021',
+    period: 'Jan 2026 - Mar 2026',
     periodStyle: 'dark', // Black badge
-    role: 'SOFTWARE DEVELOPER',
-    company: 'DIGITAL DAYA KREASI',
+    role: 'PENGEMBANG FULL STACK (PERSONAL PROJECT)',
+    company: 'ORGANIZATIONAL & COMMUNITY SERVICE - KULON PROGO, INDONESIA',
     description:
-      'Membangun antarmuka modular, mengembangkan API gateway terpusat, dan menyederhanakan proses automated deployment dengan Docker.',
+      'Merancang dan menguji platform web pusat informasi serta edukasi publik untuk Dusun Bleberan, Kulon Progo, guna mendukung potensi ekowisata dan konservasi hutan mangrove. Membangun antarmuka yang ramah pengguna untuk menyajikan dokumentasi lingkungan serta berkolaborasi dengan komunitas lokal dan tim KKN.',
+    bullets: [
+      'Pengembangan Platform Web: Merancang & menguji portal web ekowisata & konservasi mangrove',
+      'Fitur & Konten: Antarmuka ramah pengguna menyajikan dokumentasi lingkungan secara transparan',
+      'Kolaborasi Masyarakat: Menjembatani komunikasi wisatawan, peneliti, dan warga setempat',
+    ],
   },
   {
-    period: 'Agustus 2015 - Juni 2019',
-    periodStyle: 'outline', // White badge with black border
-    role: 'SARJANA ILMU KOMPUTER (S.KOM)',
-    company: 'UNIVERSITAS INDONESIA',
+    period: 'Oct 2024 - Jan 2025',
+    periodStyle: 'dark', // Black badge
+    role: 'PENGEMBANG APLIKASI MOBILE (TEAM PROJECT)',
+    company: 'FUFUFAFA TEAM - SLEMAN, INDONESIA',
     description:
-      'Fokus pada Rekayasa Perangkat Lunak, Algoritma Struktur Data, dan Sistem Terdistribusi. Lulus dengan predikat Sangat Memuaskan.',
+      'Mengembangkan aplikasi edukasi pengelolaan sampah (Recyclearn) berbasis Android menggunakan Kotlin dengan arsitektur Android modern (MVVM / Clean Architecture). Merancang UI interaktif dan navigasi intuitif untuk klasifikasi sampah (organik, non-organik, B3) serta melakukan optimasi fungsi dan performa bebas crash.',
+    bullets: [
+      'Pengembangan Aplikasi: Mengembangkan Recyclearn berbasis Kotlin dengan arsitektur MVVM / Clean',
+      'Fitur Utama & UI/UX: Merancang UI interaktif untuk klasifikasi sampah, edukasi, dan artikel',
+      'Optimasi & Pengujian: Pengujian menyeluruh untuk performa responsif dan bebas crash',
+    ],
+  },
+  {
+    period: 'Sep 2024 - Jan 2025',
+    periodStyle: 'dark', // Black badge
+    role: 'GAME DEVELOPER (TEAM PROJECT)',
+    company: 'HEXA - SLEMAN, INDONESIA',
+    description:
+      'Berkonsentrasi dalam pengembangan game strategi "Fight for Castle: The Queen\'s Guard" menggunakan engine Unity dan bahasa pemrograman C#. Membangun mekanika gameplay, sistem pertahanan istana, algoritma logika AI musuh (pathfinding), serta merancang antarmuka UI/UX yang nyaman bagi pemain.',
+    bullets: [
+      'Pengembangan Game: Membangun game strategi "Fight for Castle" dengan Unity dan C#',
+      'Implementasi Gameplay: Sistem pertahanan (defense system) & algoritma logika pathfinding/AI',
+      'Desain UI/UX: Merancang antarmuka pengguna intuitif untuk pengalaman bermain optimal',
+    ],
+  },
+  {
+    period: 'Sep 2022 - Oct 2026',
+    periodStyle: 'outline', // Outline badge
+    role: 'BACHELOR, INFORMATIKA (S.KOM) — GPA: 3.70 / 4.00 (CUM LAUDE)',
+    company: 'UNIVERSITAS ISLAM INDONESIA',
+    description:
+      'Menempuh pendidikan Sarjana Informatika dengan predikat kehormatan Cum Laude (IPK 3.70 dari skala 4.00). Berfokus pada bidang Pengembangan dan Audit Aksesibilitas Website, perancangan antarmuka human-centered, rekayasa perangkat lunak, dan arsitektur sistem.',
+    bullets: [
+      'Predikat: Cum Laude dengan IPK 3.70 / 4.00',
+      'Fokus Bidang: Pengembangan dan Audit Aksesibilitas Website (WCAG 2.2 Level AA)',
+      'Aktivitas: Rekayasa perangkat lunak, riset aksesibilitas digital, proyek kolaboratif',
+    ],
+  },
+];
+
+export const CERTIFICATIONS_DATA: CertificationItem[] = [
+  {
+    title: 'Certificate of English Proficiency Test (CEPT)',
+    issuer: 'CILACS Universitas Islam Indonesia',
+    period: 'Oct 2025 - Oct 2027',
+    score: 'Overall Score: 559 (Upper-Intermediate)',
+    description:
+      'Sertifikat kemahiran bahasa Inggris resmi yang diterbitkan oleh CILACS Universitas Islam Indonesia dengan skor 559.',
   },
 ];
 
 export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
-    label: 'GitHub',
-    tag: '[EXT]',
-    url: 'https://github.com/alexpratama',
-    type: 'ext',
-  },
-  {
     label: 'LinkedIn',
-    tag: '[EXT]',
-    url: 'https://linkedin.com/in/alexpratama',
+    tag: '[LINKEDIN]',
+    url: 'https://linkedin.com/in/febritamaark/',
     type: 'ext',
   },
   {
-    label: 'Twitter / X',
-    tag: '[EXT]',
-    url: 'https://x.com/alexpratama_dev',
+    label: 'GitHub',
+    tag: '[GITHUB]',
+    url: 'https://github.com/FbritamaRK',
     type: 'ext',
   },
   {
     label: 'Email Langsung',
-    tag: '[MAIL]',
-    url: 'mailto:alex.pratama@dev.id',
+    tag: '[EMAIL]',
+    url: 'mailto:febriraka34@gmail.com',
     type: 'mail',
   },
+  {
+    label: 'WhatsApp / Telepon',
+    tag: '[+62 881 2625 922]',
+    url: 'https://wa.me/628812625922',
+    type: 'ext',
+  },
 ];
+
+export const generateAtsCvText = (): string => {
+  return `${HERO_DATA.name}
+${HERO_DATA.location} | ${HERO_DATA.phone}
+${HERO_DATA.email} | ${HERO_DATA.linkedin} | ${HERO_DATA.github}
+
+PROFESSIONAL SUMMARY
+----------------------------------------------------------------------
+${ABOUT_DATA.paragraphs.join('\n\n')}
+
+EDUCATION
+----------------------------------------------------------------------
+Universitas Islam Indonesia                                Sep 2022 - Oct 2026
+Bachelor, Informatika - GPA: 3.70 / 4.00 (Cum Laude)
+• Fokus pada bidang Pengembangan dan Audit Aksesibilitas Website
+
+RELEVANT PROJECT EXPERIENCE
+----------------------------------------------------------------------
+UI/UX Designer & Web Developer (Academic Project)           Sept 2025 - July 2026
+Project Tugas Akhir S1: DPMPTSP v2 Gunungkidul
+• Perancangan Ulang UI/UX: Merancang ulang antarmuka pengguna (UI/UX) dan struktur informasi situs resmi DPMPTSP Kabupaten Gunungkidul sebagai Proyek Tugas Akhir S1.
+• Standar Aksesibilitas Web: Memuat dan mengimplementasikan standar internasional Web Content Accessibility Guidelines (WCAG) 2.2 Level AA untuk memastikan platform inklusif bagi penyandang disabilitas.
+• Aksesibilitas Informasi: Memperbaiki sistem navigasi guna mempermudah masyarakat dalam mengakses informasi perizinan dan investasi secara transparan.
+
+Pengembang Full Stack (Personal Project)                    Jan 2026 - Mar 2026
+Organizational & Community Service - Kulon Progo, Indonesia
+• Pengembangan Platform Web: Merancang dan menguji platform web pusat informasi serta edukasi publik untuk Dusun Bleberan, Kulon Progo, guna mendukung potensi ekowisata dan konservasi hutan mangrove.
+• Fitur & Konten: Membangun antarmuka yang ramah pengguna (user-friendly) untuk menyajikan dokumentasi lingkungan, informasi wisata ekologis, dan edukasi publik secara transparan serta mudah diakses.
+• Kolaborasi Masyarakat: Berkolaborasi dengan komunitas lokal dan tim KKN dalam mengumpulkan kebutuhan informasi guna menjembatani komunikasi antara wisatawan, peneliti, dan warga setempat.
+
+Pengembang Aplikasi Mobile (Team Project)                   Oct 2024 - Jan 2025
+Fufufafa Team - Sleman, Indonesia
+• Pengembangan Aplikasi: Mengembangkan aplikasi edukasi pengelolaan sampah (Recyclearn) berbasis Android menggunakan Kotlin dengan mengimplementasikan arsitektur Android modern (MVVM / Clean Architecture).
+• Fitur Utama & Antarmuka (UI/UX): Merancang dan mengimplementasikan antarmuka pengguna (UI) yang interaktif serta navigasi aplikasi intuitif untuk fitur klasifikasi sampah (organik, non-organik, B3), materi edukasi, dan artikel.
+• Optimasi & Pengujian: Melakukan pengujian fungsi dan pengoptimalan performa aplikasi untuk memastikan pengalaman pengguna yang responsif dan bebas crash.
+
+Game Developer (Team Project)                               Sep 2024 - Jan 2025
+Hexa - Sleman, Indonesia
+• Pengembangan Game & Tech Stack: Berkonsentrasi dalam pengembangan game strategi 'Fight for Castle: The Queen\\'s Guard' menggunakan engine Unity dan bahasa pemrograman C#.
+• Implementasi Gameplay & Logika: Membangun mekanika gameplay, sistem pertahanan (defense system), dan algoritma logika pergerakan musuh (pathfinding/AI).
+• Desain UI/UX: Merancang dan mengimplementasikan antarmuka pengguna (User Interface) intuitif untuk meningkatkan kenyamanan dan pengalaman bermain pengguna (User Experience).
+
+CERTIFICATIONS
+----------------------------------------------------------------------
+Certificate of English Proficiency Test (CEPT)             Oct 2025 - Oct 2027
+– Overall Score: 559
+CILACS Universitas Islam Indonesia
+
+SKILLS & LANGUAGES
+----------------------------------------------------------------------
+Hard Skills: Web Design, TypeScript, HTML, JavaScript, Usability Testing, Prototyping, C#, Kotlin, Unity, WCAG 2.2 Level AA
+Soft Skills: Responsibility, Analytical Thinking, Discipline, Teamwork, Human-centered design
+Software Skills: Microsoft Office Suite (Word, Excel, PowerPoint), Figma, Git
+Languages: Bahasa Indonesia (Native), English (Upper-Intermediate, CEPT Score: 559)
+`;
+};
+
+export const downloadAtsCvFile = (): void => {
+  const content = generateAtsCvText();
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'CV_FEBRITAMA_RAKA_QUALITA_AKHSANA_ATS.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
+

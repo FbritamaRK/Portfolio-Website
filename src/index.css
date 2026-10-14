@@ -10,3 +10,264 @@
   }
 }
 
+/* ── Scroll Animation Base ───────────────────────────────────────────────── */
+.animate-on-scroll {
+  opacity: 0;
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms);
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Variants */
+.anim-fade-up    { transform: translateY(28px); }
+.anim-fade-left  { transform: translateX(-28px); }
+.anim-fade-right { transform: translateX(28px); }
+.anim-scale-in   { transform: scale(0.94); }
+.anim-fade       { transform: translateY(0px); }
+
+/* ── Hero Entrance Animations (fires on page load) ───────────────────────── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-anim {
+  animation: hero-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-anim-d1 { animation-delay: 0.05s; }
+.hero-anim-d2 { animation-delay: 0.15s; }
+.hero-anim-d3 { animation-delay: 0.25s; }
+.hero-anim-d4 { animation-delay: 0.35s; }
+.hero-anim-d5 { animation-delay: 0.45s; }
+.hero-anim-d6 { animation-delay: 0.55s; }
+
+/* ── Status Badge Blip ───────────────────────────────────────────────────── */
+@keyframes status-blip {
+  0%, 49%  { opacity: 1; }
+  50%, 74% { opacity: 0.35; }
+  75%, 100%{ opacity: 1; }
+}
+
+@keyframes blip-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(163, 230, 53, 0.8); opacity: 1; }
+  50%       { box-shadow: 0 0 0 5px rgba(163, 230, 53, 0);  opacity: 0.5; }
+}
+
+.status-blip {
+  animation: status-blip 2.8s ease-in-out infinite;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-blip::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a3e635;
+  flex-shrink: 0;
+  animation: blip-dot 1.4s ease-in-out infinite;
+}
+
+/* ── 3D Decorative Elements ──────────────────────────────────────────────── */
+
+/* Slow spin for the cube wrapper */
+@keyframes cube-spin {
+  0%   { transform: rotateX(22deg) rotateY(0deg);   }
+  100% { transform: rotateX(22deg) rotateY(360deg); }
+}
+
+/* Gentle bob up/down */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Pulse opacity for dots */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.6;  }
+}
+
+/* Rotate a flat shape in 2D */
+@keyframes spin-slow {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* Horizontal drift */
+@keyframes drift-x {
+  0%, 100% { transform: translateX(0px)  rotate(45deg); }
+  50%       { transform: translateX(10px) rotate(45deg); }
+}
+
+/* Vertical drift for accent bars */
+@keyframes drift-y-sm {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ── Cube scene ──────────────────────────────────────────────────────────── */
+.cube-scene {
+  perspective: 400px;
+  perspective-origin: 50% 40%;
+}
+
+.cube-body {
+  width: 88px;
+  height: 88px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cube-spin 10s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  border: 2.5px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cube-face--front  { background: #dfff00; color: #000;    transform: rotateY(  0deg) translateZ(44px); }
+.cube-face--back   { background: #000;    color: #dfff00; transform: rotateY(180deg) translateZ(44px); }
+.cube-face--left   { background: #f5f5f5; color: #000;    transform: rotateY(-90deg) translateZ(44px); }
+.cube-face--right  { background: #f5f5f5; color: #000;    transform: rotateY( 90deg) translateZ(44px); }
+.cube-face--top    { background: #fff;    color: #000;    transform: rotateX( 90deg) translateZ(44px); }
+.cube-face--bottom { background: #e8e8e8; color: #000;    transform: rotateX(-90deg) translateZ(44px); }
+
+/* Float wrapper around cube */
+.cube-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+/* ── Small accent shapes ─────────────────────────────────────────────────── */
+.shape-diamond {
+  width: 26px;
+  height: 26px;
+  border: 2.5px solid #000;
+  background: #dfff00;
+  transform: rotate(45deg);
+  animation: drift-x 3.4s ease-in-out infinite;
+}
+
+.shape-ring {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  background: transparent;
+  animation: spin-slow 8s linear infinite;
+}
+
+.shape-ring-sm {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: transparent;
+  animation: spin-slow 5s linear infinite reverse;
+}
+
+.shape-square-sm {
+  width: 16px;
+  height: 16px;
+  background: #000;
+  animation: float-y 2.9s ease-in-out infinite 0.5s;
+}
+
+.shape-square-yellow {
+  width: 22px;
+  height: 22px;
+  background: #dfff00;
+  border: 2px solid #000;
+  animation: float-y 3.6s ease-in-out infinite 0.2s;
+}
+
+.shape-bar-h {
+  width: 60px;
+  height: 5px;
+  background: #000;
+  animation: drift-y-sm 3.8s ease-in-out infinite;
+}
+
+.shape-bar-v {
+  width: 5px;
+  height: 52px;
+  background: #000;
+  animation: drift-x 4.2s ease-in-out infinite 0.3s;
+}
+
+/* ── Isometric stacked boxes (CSS only) ─────────────────────────────────── */
+@keyframes iso-float {
+  0%, 100% { transform: translateY(0px)  skewX(-1deg); }
+  50%       { transform: translateY(-8px) skewX(-1deg); }
+}
+
+.iso-stack {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  animation: iso-float 4.5s ease-in-out infinite;
+}
+
+.iso-box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+}
+
+.iso-box-1 { background: #dfff00; top: 0;  left: 0;  }
+.iso-box-2 { background: #fff;    top: 7px; left: 7px; }
+.iso-box-3 { background: #000;    top: 14px; left: 14px; }
+
+/* ── Dot grid ────────────────────────────────────────────────────────────── */
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 9px;
+}
+
+.dot-grid span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #000;
+  display: block;
+  animation: pulse-dot 2.6s ease-in-out infinite;
+}
+
+.dot-grid span:nth-child(2)  { animation-delay: 0.13s; }
+.dot-grid span:nth-child(3)  { animation-delay: 0.26s; }
+.dot-grid span:nth-child(4)  { animation-delay: 0.39s; }
+.dot-grid span:nth-child(5)  { animation-delay: 0.52s; }
+.dot-grid span:nth-child(6)  { animation-delay: 0.65s; }
+.dot-grid span:nth-child(7)  { animation-delay: 0.78s; }
+.dot-grid span:nth-child(8)  { animation-delay: 0.91s; }
+.dot-grid span:nth-child(9)  { animation-delay: 1.04s; }
+.dot-grid span:nth-child(10) { animation-delay: 1.17s; }
+.dot-grid span:nth-child(11) { animation-delay: 1.30s; }
+.dot-grid span:nth-child(12) { animation-delay: 1.43s; }
+.dot-grid span:nth-child(13) { animation-delay: 1.56s; }
+.dot-grid span:nth-child(14) { animation-delay: 1.69s; }
+.dot-grid span:nth-child(15) { animation-delay: 1.82s; }
+.dot-grid span:nth-child(16) { animation-delay: 1.95s; }
+.dot-grid span:nth-child(17) { animation-delay: 2.08s; }
+.dot-grid span:nth-child(18) { animation-delay: 2.21s; }
+.dot-grid span:nth-child(19) { animation-delay: 2.34s; }
+.dot-grid span:nth-child(20) { animation-delay: 2.47s; }

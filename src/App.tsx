@@ -39,9 +39,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-100 flex flex-col items-center py-0 sm:py-8 text-black antialiased selection:bg-yellow-300 selection:text-black">
+    <div className="min-h-screen bg-white flex flex-col items-center py-0 sm:py-8 text-black antialiased selection:bg-yellow-300 selection:text-black">
       {/* Centered Portfolio Frame */}
-      <div className="w-full max-w-4xl bg-white border-x-2 sm:border-y-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <div className="w-full max-w-5xl bg-white border-x-2 sm:border-y-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
         {/* Navigation Bar */}
         <Header onNavigate={scrollToSection} />
 

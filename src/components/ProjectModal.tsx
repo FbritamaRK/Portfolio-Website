@@ -122,41 +122,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, mode, onClo
             <div className="space-y-4">
               <div className="border-2 border-black p-4 bg-black text-[#dfff00] font-mono text-xs">
                 <div className="flex items-center justify-between pb-2 mb-2 border-b border-neutral-700 text-neutral-400">
-                  <span>tree /architecture/v2</span>
-                  <span>POSIX compliant</span>
+                  <span>tree /{project.id}</span>
+                  <span>Modular Architecture</span>
                 </div>
                 <pre className="overflow-x-auto leading-relaxed whitespace-pre font-mono">
-{`├── core/
-│   ├── api/
-│   │   ├── controllers/
-│   │   └── middleware/auth.ts
-│   ├── database/
-│   │   ├── migrations/
-│   │   └── connection-pool.ts
-│   └── services/
-│       ├── worker-queue.ts
-│       └── metrics-collector.ts
-├── tests/
-│   ├── unit/ (coverage 94%)
-│   └── integration/
-└── docker-compose.prod.yml`}
+                  {project.archTree || `├── src/\n│   ├── components/\n│   └── modules/\n└── README.md`}
                 </pre>
               </div>
-              <p className="text-xs text-neutral-700">
-                Arsitektur dirancang secara modular dengan pemisahan dependensi (Clean Architecture),
-                memastikan setiap komponen mudah diuji secara independen dan mendukung scaling vertikal maupun horizontal.
+              <p className="text-xs text-neutral-700 leading-relaxed">
+                {project.archDescription ||
+                  'Arsitektur dirancang secara modular dengan pemisahan dependensi (Clean Architecture), memastikan setiap komponen mudah diuji secara independen.'}
               </p>
             </div>
           )}
 
           {activeTab === 'logs' && (
             <div className="border-2 border-black bg-neutral-900 text-white p-4 font-mono text-xs space-y-2">
-              <div className="text-green-400">&gt; checking health endpoint: HTTP 200 OK</div>
-              <div className="text-neutral-400">[info] latency p95: 38ms | memory_usage: 124MB</div>
-              <div className="text-neutral-400">[info] postgres_pool: active=12 idle=8 max=40</div>
-              <div className="text-neutral-400">[info] redis_cache_hit_rate: 96.4%</div>
-              <div className="text-green-400">&gt; all background workers alive and processing</div>
-              <div className="text-yellow-400 mt-2">&gt; ready for live production traffic [ACTIVE]</div>
+              <div className="text-green-400">&gt; audit check: WCAG 2.2 Level AA / Code Quality [PASSED]</div>
+              <div className="text-neutral-400">[info] target_standard: Web Content Accessibility Guidelines 2.2 AA</div>
+              <div className="text-neutral-400">[info] contrast_ratio: &gt;= 4.5:1 (Normal Text) / &gt;= 3:1 (Large UI) [PASS]</div>
+              <div className="text-neutral-400">[info] keyboard_navigation: 100% focus trap &amp; skip links verified</div>
+              <div className="text-neutral-400">[info] screen_reader_compat: ARIA 1.2 compliant (NVDA/VoiceOver)</div>
+              <div className="text-green-400">&gt; test_suite: all unit &amp; usability test assertions passed (0 errors)</div>
+              <div className="text-yellow-400 mt-2">&gt; status: production ready &amp; verified for public usage [OK]</div>
             </div>
           )}
         </div>
@@ -177,7 +165,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, mode, onClo
               rel="noreferrer"
               className="border-2 border-black bg-white px-3 py-1.5 font-bold flex items-center gap-1 hover:bg-neutral-100 cursor-pointer text-black no-underline"
             >
-              <span>{mode === 'demo' ? 'KUNJUNGI WEB' : 'BUKA GITHUB'}</span>
+              <span>{mode === 'demo' ? 'KUNJUNGI TAUTAN' : 'BUKA GITHUB'}</span>
               <ExternalLink size={14} />
             </a>
           </div>

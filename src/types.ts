@@ -2,12 +2,15 @@ export interface Project {
   id: string;
   tag: string;
   title: string;
+  subtitle?: string;
   description: string;
   techStack: string[];
   demoUrl?: string;
   repoUrl?: string;
   highlights?: string[];
   metrics?: string;
+  archTree?: string;
+  archDescription?: string;
 }
 
 export interface SkillColumn {
@@ -21,6 +24,15 @@ export interface ExperienceItem {
   role: string;
   company: string;
   description: string;
+  bullets?: string[];
+}
+
+export interface CertificationItem {
+  title: string;
+  issuer: string;
+  period: string;
+  score?: string;
+  description: string;
 }
 
 export interface SocialLinkItem {
@@ -29,3 +41,4 @@ export interface SocialLinkItem {
   url: string;
   type: 'ext' | 'mail';
 }
+
