@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
+import { EducationSection } from './components/EducationSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ExperienceSection } from './components/ExperienceSection';
@@ -56,16 +57,19 @@ export default function App() {
           {/* 01: Tentang Saya */}
           <AboutSection />
 
-          {/* 02: Keahlian & Alat */}
+          {/* 02: Riwayat Pendidikan */}
+          <EducationSection />
+
+          {/* 03: Keahlian & Alat */}
           <SkillsSection />
 
-          {/* 03: Daftar Proyek */}
+          {/* 04: Daftar Proyek */}
           <ProjectsSection />
 
-          {/* 04: Riwayat Pengalaman */}
+          {/* 05: Riwayat Pengalaman */}
           <ExperienceSection />
 
-          {/* 05: Hubungi Saya */}
+          {/* 06: Hubungi Saya */}
           <ContactSection />
         </main>
 

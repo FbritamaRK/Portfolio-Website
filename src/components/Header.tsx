@@ -10,6 +10,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
 
   const navItems = [
     { label: 'TENTANG', target: 'tentang' },
+    { label: 'PENDIDIKAN', target: 'pendidikan' },
     { label: 'KEAHLIAN', target: 'keahlian' },
     { label: 'PROYEK', target: 'proyek' },
     { label: 'PENGALAMAN', target: 'pengalaman' },

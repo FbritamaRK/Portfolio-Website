@@ -4,7 +4,7 @@ export const HERO_DATA = {
   status: '[STATUS: AVAILABLE FOR HIRE & COLLABORATION]',
   greeting: 'Halo, saya',
   name: 'FEBRITAMA RAKA QUALITA AKHSANA',
-  role: 'Full-Stack Web, Mobile & Game Developer',
+  role: 'Full-Stack Web Developer',
   specialization: 'UI/UX Design & Web Accessibility Specialist (WCAG 2.2 Level AA)',
   bio: 'Lulusan Informatika Universitas Islam Indonesia berpengalaman teknis lintas platform dalam pengembangan Full-Stack Web, aplikasi Mobile, dan Game interaktif. Berfokus pada inovasi digital inklusif melalui integrasi desain UI/UX dan standar aksesibilitas internasional (WCAG 2.2 Level AA).',
   location: 'Sleman, D.I. Yogyakarta 55584',
@@ -138,39 +138,29 @@ export const PROJECTS_DATA: Project[] = [
       'Arsitektur web berbasis modul konten yang ringan dan responsif, dioptimalkan untuk akses cepat masyarakat pedesaan maupun wisatawan menggunakan koneksi internet mobile.',
   },
   {
-    id: 'project-recyclearn',
+    id: 'project-kraeplin-simulator',
     tag: '#PROYEK-03',
-    title: 'Recyclearn - Edukasi Pengelolaan Sampah',
-    subtitle: 'Mobile Team Project - Fufufafa Team (Oct 2024 - Jan 2025)',
+    title: 'Kraepelin & Pauli Simulator',
+    subtitle: 'Web Application - Interactive Psychological Assessment (2026)',
     description:
-      'Aplikasi mobile edukasi pengelolaan sampah berbasis Android menggunakan Kotlin dengan penerapan arsitektur modern (MVVM / Clean Architecture) dan navigasi interaktif.',
-    techStack: ['Android', 'Kotlin', 'MVVM', 'Clean Architecture', 'Mobile UI/UX', 'Testing'],
-    demoUrl: 'https://linkedin.com/in/febritamaark/',
-    repoUrl: 'https://github.com/FbritamaRK',
-    metrics: 'MVVM Clean Architecture | Zero Crash Stability | 3 Kategori Sampah (Organik, Anorganik, B3)',
+      'Aplikasi simulator psikotes interaktif untuk Tes Kraepelin dan Tes Pauli (Tes Koran / Hitungan Cepat) berbasis web yang dirancang untuk persiapan ujian asesmen seleksi kerja profesional (BUMN, Perbankan, Swasta, CPNS). Dilengkapi sistem auto-timer 15 detik/lajur, audio synthesizer sinyal lonceng "PINDAH LAJUR!", serta directional adaptive auto-scroll.',
+    techStack: ['JavaScript (ES6+)', 'HTML5 & CSS3', 'Web Audio API', 'Adaptive Auto-Scroll', 'Performance Metrics'],
+    demoUrl: 'https://kraeplinpaulisimulator.vercel.app',
+    repoUrl: 'https://github.com/FbritamaRK/Kraeplin-Simulator',
+    metrics: 'Web Audio Synthesizer | Adaptive Auto-Scroll | Standar Asesmen 50 Lajur @ 15s',
     highlights: [
-      'Mengembangkan aplikasi edukasi pengelolaan sampah Recyclearn berbasis Android Kotlin',
-      'Mengimplementasikan arsitektur Android modern (MVVM / Clean Architecture) untuk skalabilitas kode',
-      'Merancang dan mengimplementasikan UI interaktif serta navigasi intuitif untuk fitur klasifikasi sampah, materi edukasi, dan artikel',
-      'Melakukan pengujian fungsi dan optimasi performa untuk memastikan aplikasi responsif dan bebas crash',
+      'Mengembangkan simulator web interaktif untuk Tes Kraepelin (bawah ke atas) dan Tes Pauli (atas ke bawah) sesuai standar asesmen psikologi kerja profesional',
+      'Mengimplementasikan sistem pewaktuan otomatis (15 detik/lajur) dengan sintesis suara lonceng "PINDAH LAJUR!" dan beep warning berbasis Web Audio API',
+      'Merancang directional adaptive auto-scroll dan focus tracking mulus yang mendukung kontrol keyboard PC numpad maupun mobile keyboard',
+      'Mengkalkulasi metrik evaluasi kecepatan, grafik ketelitian, dan analisis ritme stabilitas konsentrasi secara real-time',
     ],
-    archTree: `├── app/src/main/java/com/recyclearn/
-│   ├── presentation/
-│   │   ├── ui/
-│   │   │   ├── classification/ (Organik, Non-organik, B3)
-│   │   │   ├── education/
-│   │   │   └── articles/
-│   │   └── viewmodel/
-│   ├── domain/
-│   │   ├── model/WasteItem.kt
-│   │   └── usecase/GetWasteClassificationUseCase.kt
-│   └── data/
-│       ├── repository/WasteRepositoryImpl.kt
-│       └── datasource/local/WasteDao.kt
-└── app/src/test/
-    └── UnitAndPerformanceTests.kt`,
+    archTree: `├── index.html                # Konfigurasi simulasi, instruksi pengerjaan, & mode lajur
+├── playKraep.html            # Antarmuka simulasi pengerjaan Kraepelin & Pauli
+├── styles.css                # Sistem layout grid lajur, tipografi, & visual alerts
+├── app.js                    # State machine ujian, Web Audio API chime, timer lajur, & skor
+└── README.md                 # Dokumentasi komprehensif panduan psikotes & fitur aplikasi`,
     archDescription:
-      'Penerapan pola MVVM dengan pemisahan lapisan Presentasi, Domain, dan Data (Clean Architecture), memfasilitasi pengujian unit yang independen dan penanganan memori yang efisien.',
+      'Arsitektur web client-side murni (Vanilla JS, HTML5, CSS3) tanpa dependensi eksternal untuk menjamin zero-latency input dan manipulasi DOM instan saat perpindahan lajur angka cepat.',
   },
   {
     id: 'project-fight-for-castle',
@@ -208,6 +198,41 @@ export const PROJECTS_DATA: Project[] = [
 │       └── BattleStage.unity`,
     archDescription:
       'Arsitektur berorientasi objek dalam Unity dengan pemisahan modul AI pathfinding berbasis grid, state machine musuh, dan controller pertahanan istana yang sinkron.',
+  },
+  {
+    id: 'project-recyclearn',
+    tag: '#PROYEK-05',
+    title: 'Recyclearn - Edukasi Pengelolaan Sampah',
+    subtitle: 'Mobile Team Project - Fufufafa Team (Oct 2024 - Jan 2025)',
+    description:
+      'Aplikasi mobile edukasi pengelolaan sampah berbasis Android menggunakan Kotlin dengan penerapan arsitektur modern (MVVM / Clean Architecture) dan navigasi interaktif.',
+    techStack: ['Android', 'Kotlin', 'MVVM', 'Clean Architecture', 'Mobile UI/UX', 'Testing'],
+    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    repoUrl: 'https://github.com/FbritamaRK',
+    metrics: 'MVVM Clean Architecture | Zero Crash Stability | 3 Kategori Sampah (Organik, Anorganik, B3)',
+    highlights: [
+      'Mengembangkan aplikasi edukasi pengelolaan sampah Recyclearn berbasis Android Kotlin',
+      'Mengimplementasikan arsitektur Android modern (MVVM / Clean Architecture) untuk skalabilitas kode',
+      'Merancang dan mengimplementasikan UI interaktif serta navigasi intuitif untuk fitur klasifikasi sampah, materi edukasi, dan artikel',
+      'Melakukan pengujian fungsi dan optimasi performa untuk memastikan aplikasi responsif dan bebas crash',
+    ],
+    archTree: `├── app/src/main/java/com/recyclearn/
+│   ├── presentation/
+│   │   ├── ui/
+│   │   │   ├── classification/ (Organik, Non-organik, B3)
+│   │   │   ├── education/
+│   │   │   └── articles/
+│   │   └── viewmodel/
+│   ├── domain/
+│   │   ├── model/WasteItem.kt
+│   │   └── usecase/GetWasteClassificationUseCase.kt
+│   └── data/
+│       ├── repository/WasteRepositoryImpl.kt
+│       └── datasource/local/WasteDao.kt
+└── app/src/test/
+    └── UnitAndPerformanceTests.kt`,
+    archDescription:
+      'Penerapan pola MVVM dengan pemisahan lapisan Presentasi, Domain, dan Data (Clean Architecture), memfasilitasi pengujian unit yang independen dan penanganan memori yang efisien.',
   },
 ];
 
@@ -264,13 +289,16 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       'Desain UI/UX: Merancang antarmuka pengguna intuitif untuk pengalaman bermain optimal',
     ],
   },
+];
+
+export const EDUCATION_DATA: ExperienceItem[] = [
   {
     period: 'Sep 2022 - Oct 2026',
     periodStyle: 'outline', // Outline badge
     role: 'BACHELOR, INFORMATIKA (S.KOM) — GPA: 3.70 / 4.00 (CUM LAUDE)',
     company: 'UNIVERSITAS ISLAM INDONESIA',
     description:
-      'Menempuh pendidikan Sarjana Informatika dengan predikat kehormatan Cum Laude (IPK 3.70 dari skala 4.00). Berfokus pada bidang Pengembangan dan Audit Aksesibilitas Website, perancangan antarmuka human-centered, rekayasa perangkat lunak, dan arsitektur sistem.',
+      'Menempuh pendidikan Sarjana Informatika dengan predikat Cum Laude (IPK 3.70 dari skala 4.00). Berfokus pada bidang Pengembangan dan Audit Aksesibilitas Website, perancangan antarmuka human-centered, rekayasa perangkat lunak, dan arsitektur sistem.',
     bullets: [
       'Predikat: Cum Laude dengan IPK 3.70 / 4.00',
       'Fokus Bidang: Pengembangan dan Audit Aksesibilitas Website (WCAG 2.2 Level AA)',
@@ -357,6 +385,11 @@ Hexa - Sleman, Indonesia
 • Pengembangan Game & Tech Stack: Berkonsentrasi dalam pengembangan game strategi 'Fight for Castle: The Queen\\'s Guard' menggunakan engine Unity dan bahasa pemrograman C#.
 • Implementasi Gameplay & Logika: Membangun mekanika gameplay, sistem pertahanan (defense system), dan algoritma logika pergerakan musuh (pathfinding/AI).
 • Desain UI/UX: Merancang dan mengimplementasikan antarmuka pengguna (User Interface) intuitif untuk meningkatkan kenyamanan dan pengalaman bermain pengguna (User Experience).
+
+Pengembang Aplikasi Web (Personal Project)                  2026
+Kraepelin & Pauli Simulator
+• Simulator Interaktif: Mengembangkan simulator web interaktif untuk Tes Kraepelin dan Tes Pauli dengan Web Audio API dan adaptive auto-scroll.
+• Algoritma & Performa: Mengkalkulasi metrik evaluasi kecepatan, grafik ketelitian, dan ritme konsentrasi secara real-time tanpa latensi.
 
 CERTIFICATIONS
 ----------------------------------------------------------------------

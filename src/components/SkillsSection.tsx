@@ -14,7 +14,7 @@ export const SkillsSection: React.FC = () => {
         className="animate-on-scroll anim-fade-left flex items-center pb-2 border-b-2 border-black mb-6"
       >
         <span className="bg-black text-white px-2 py-0.5 font-mono text-xs sm:text-sm font-bold mr-2.5">
-          02
+          03
         </span>
         <h2 className="font-mono font-bold text-base sm:text-lg tracking-wider uppercase text-black">
           KEAHLIAN &amp; ALAT

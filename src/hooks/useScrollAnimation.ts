@@ -15,12 +15,18 @@ interface UseScrollAnimationOptions {
 export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(
   options: UseScrollAnimationOptions = {}
 ) {
-  const { threshold = 0.12, rootMargin = '0px 0px -40px 0px', once = false } = options;
+  const { threshold = 0.05, rootMargin = '0px 0px -20px 0px', once = true } = options;
   const ref = useRef<T>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-visible');
+      if (once) return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,9 +53,10 @@ export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(
  * with a staggered delay via CSS custom property `--delay`.
  */
 export function useStaggerAnimation<T extends HTMLElement = HTMLDivElement>(
-  options: UseScrollAnimationOptions & { staggerMs?: number } = {}
+  options: UseScrollAnimationOptions & { staggerMs?: number } = {},
+  deps: React.DependencyList = []
 ) {
-  const { threshold = 0.08, rootMargin = '0px 0px -30px 0px', once = false, staggerMs = 80 } = options;
+  const { threshold = 0.02, rootMargin = '0px 0px -20px 0px', once = true, staggerMs = 80 } = options;
   const ref = useRef<T>(null);
 
   useEffect(() => {
@@ -63,6 +70,13 @@ export function useStaggerAnimation<T extends HTMLElement = HTMLDivElement>(
     children.forEach((child, i) => {
       child.style.setProperty('--delay', `${i * staggerMs}ms`);
     });
+
+    // If container is already inside the viewport, reveal immediately
+    const rect = container.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      children.forEach((child) => child.classList.add('is-visible'));
+      if (once) return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -78,7 +92,8 @@ export function useStaggerAnimation<T extends HTMLElement = HTMLDivElement>(
 
     observer.observe(container);
     return () => observer.disconnect();
-  }, [threshold, rootMargin, once, staggerMs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [threshold, rootMargin, once, staggerMs, ...deps]);
 
   return ref;
 }
