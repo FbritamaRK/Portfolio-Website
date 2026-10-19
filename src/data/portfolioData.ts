@@ -163,8 +163,44 @@ export const PROJECTS_DATA: Project[] = [
       'Arsitektur web client-side murni (Vanilla JS, HTML5, CSS3) tanpa dependensi eksternal untuk menjamin zero-latency input dan manipulasi DOM instan saat perpindahan lajur angka cepat.',
   },
   {
-    id: 'project-fight-for-castle',
+    id: 'project-intelligence-test',
     tag: '#PROYEK-04',
+    title: 'Simulasi Tes Ketelitian Data (Clerical Test)',
+    subtitle: 'Web Application - Interactive Psychological Assessment (2026)',
+    description:
+      'Aplikasi simulasi tes ketelitian data interaktif (Clerical Aptitude & Accuracy Test) berbasis web yang dirancang khusus untuk persiapan menghadapi psikotes seleksi lowongan pekerjaan di BUMN, Perbankan (Bank BCA, Mandiri, BNI, BRI), CPNS / Kementerian, serta Perusahaan Swasta & Multinasional. Menguji kecepatan reaksi mata, konsentrasi fokus, dan ketelitian membandingkan dua blok data dalam batas waktu presisi sub-detik.',
+    techStack: [
+      'JavaScript (ES6+)',
+      'HTML5 & CSS3',
+      'Web Audio API',
+      'Vite',
+      'Keyboard & Touch Engine',
+      'Diff Highlighting Engine',
+    ],
+    demoUrl: 'https://intelligence-test-eosin.vercel.app/',
+    repoUrl: 'https://github.com/FbritamaRK/Intelligence-Test',
+    metrics: 'Web Audio Synthesizer | Timer Presisi 1-30s | Subtle Diff Trap Generator & Error Highlighting',
+    highlights: [
+      'Mengembangkan simulator tes ketelitian data (Clerical Aptitude) dengan 5 kategori data: Angka (0-9), Alfanumerik, Huruf Acak, Nama/Instansi, dan Campuran',
+      'Merancang sistem pewaktuan fleksibel (1.0 - 30.0 detik/soal) dengan progress bar visual dinamis dan peringatan waktu kritis',
+      'Mengimplementasikan generator jebakan psikotes realistis (transposition urutan angka, lookalike pairs seperti 3 vs 8, O vs 0, B vs 8)',
+      'Menyediakan sound effects synthesizer prosedural berbasis Web Audio API (tanpa aset audio eksternal) dengan kontrol toggle suara',
+      'Fitur evaluasi mendalam: kalkulasi akurasi (%), grade ketelitian psikotes, kecepatan respon, visualisasi diff error highlight warna merah, dan mode "Ulangi yang Salah"',
+      'Mendukung kontrol ganda: pintasan keyboard penuh (Spasi/Enter, 1/S, 2/T) untuk PC serta tombol sentuh responsif untuk latihan di smartphone/tablet',
+    ],
+    archTree: `├── index.html                # Single Page App layout, panel quick-config, view-home & view-simulation
+├── style.css                 # Desain antarmuka responsif, typography JetBrains Mono, & alert styling
+├── app.js                    # SoundEffects (Web Audio API), RealDataPool generator, test engine, & diff review
+├── vite.config.js            # Konfigurasi dev server & build Vite (port 8080 host enabled)
+├── start.bat                 # One-click launcher untuk Windows & akses Wi-Fi LAN
+├── package.json              # Konfigurasi project & npm scripts
+└── README.md                 # Dokumentasi lengkap simulasi, panduan pengerjaan, & pintasan keyboard`,
+    archDescription:
+      'Arsitektur web client-side murni berbasis Vanilla JavaScript dan HTML5/CSS3 yang dioptimalkan untuk zero-latency input. Menggabungkan sintesis audio prosedural via Web Audio API, generator permutasi jebakan psikotes dinamis, serta diff highlighting otomatis untuk analisis evaluasi visual instan.',
+  },
+  {
+    id: 'project-fight-for-castle',
+    tag: '#PROYEK-05',
     title: "Fight for Castle: The Queen's Guard",
     subtitle: 'Game Dev Team Project - Hexa (Sep 2024 - Jan 2025)',
     description:
@@ -201,7 +237,7 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     id: 'project-recyclearn',
-    tag: '#PROYEK-05',
+    tag: '#PROYEK-06',
     title: 'Recyclearn - Edukasi Pengelolaan Sampah',
     subtitle: 'Mobile Team Project - Fufufafa Team (Oct 2024 - Jan 2025)',
     description:
@@ -390,6 +426,11 @@ Pengembang Aplikasi Web (Personal Project)                  2026
 Kraepelin & Pauli Simulator
 • Simulator Interaktif: Mengembangkan simulator web interaktif untuk Tes Kraepelin dan Tes Pauli dengan Web Audio API dan adaptive auto-scroll.
 • Algoritma & Performa: Mengkalkulasi metrik evaluasi kecepatan, grafik ketelitian, dan ritme konsentrasi secara real-time tanpa latensi.
+
+Pengembang Aplikasi Web (Personal Project)                  2026
+Simulasi Tes Ketelitian Data (Clerical Aptitude & Accuracy Test)
+• Simulator Interaktif: Mengembangkan aplikasi tes ketelitian data berbasis web standar seleksi kerja BUMN, Perbankan, & CPNS dengan timer presisi sub-detik (1-30s), sound effect synthesizer (Web Audio API), dan keyboard shortcuts.
+• Algoritma & Evaluasi: Mengimplementasikan generator soal dinamis (numerik, alfanumerik, verbal) dengan subtle diff traps, skoring akurasi & kecepatan real-time, serta diff error highlighting.
 
 CERTIFICATIONS
 ----------------------------------------------------------------------
