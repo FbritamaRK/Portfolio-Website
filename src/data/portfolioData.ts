@@ -78,7 +78,7 @@ export const PROJECTS_DATA: Project[] = [
     description:
       'Perancangan ulang antarmuka pengguna (UI/UX) dan restrukturisasi arsitektur informasi situs resmi DPMPTSP Kabupaten Gunungkidul sebagai Proyek Tugas Akhir S1 berbasis standar aksesibilitas internasional.',
     techStack: ['UI/UX Design', 'WCAG 2.2 Level AA', 'Web Development', 'Information Architecture', 'Usability Testing'],
-    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    demoUrl: 'https://dpmptspproto.vercel.app/',
     repoUrl: 'https://github.com/FbritamaRK',
     metrics: 'WCAG 2.2 Level AA Standard | Tugas Akhir S1 | Cum Laude GPA 3.70',
     highlights: [
@@ -111,7 +111,7 @@ export const PROJECTS_DATA: Project[] = [
     description:
       'Platform web pusat informasi serta edukasi publik untuk Dusun Bleberan, Kulon Progo, guna mendukung potensi ekowisata dan konservasi hutan mangrove secara berkelanjutan.',
     techStack: ['Full-Stack Web', 'JavaScript', 'HTML5 & CSS3', 'UI/UX Design', 'Community Collab'],
-    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    demoUrl: 'https://pesonableberan.vercel.app/',
     repoUrl: 'https://github.com/FbritamaRK',
     metrics: 'Pusat Edukasi Publik | Konservasi Mangrove | Kolaborasi Komunitas KKN',
     highlights: [
@@ -206,7 +206,7 @@ export const PROJECTS_DATA: Project[] = [
     description:
       'Game strategi taktis bertema pertahanan istana yang dikembangkan menggunakan game engine Unity dan bahasa C#, mengintegrasikan sistem pertahanan dinamis dan AI pathfinding musuh.',
     techStack: ['Unity Engine', 'C#', 'Game AI / Pathfinding', 'Defense System', 'Game UI/UX'],
-    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    demoUrl: 'https://github.com/FbritamaRK',
     repoUrl: 'https://github.com/FbritamaRK',
     metrics: 'Unity Engine | Algoritma Pathfinding AI | Real-time Defense Mechanics',
     highlights: [
@@ -243,7 +243,7 @@ export const PROJECTS_DATA: Project[] = [
     description:
       'Aplikasi mobile edukasi pengelolaan sampah berbasis Android menggunakan Kotlin dengan penerapan arsitektur modern (MVVM / Clean Architecture) dan navigasi interaktif.',
     techStack: ['Android', 'Kotlin', 'MVVM', 'Clean Architecture', 'Mobile UI/UX', 'Testing'],
-    demoUrl: 'https://linkedin.com/in/febritamaark/',
+    demoUrl: 'https://github.com/FbritamaRK',
     repoUrl: 'https://github.com/FbritamaRK',
     metrics: 'MVVM Clean Architecture | Zero Crash Stability | 3 Kategori Sampah (Organik, Anorganik, B3)',
     highlights: [
