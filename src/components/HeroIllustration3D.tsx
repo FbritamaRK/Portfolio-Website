@@ -22,7 +22,7 @@ export const HeroIllustration3D: React.FC<HeroIllustration3DProps> = ({
           SYS // 3D.ISOMETRIC
         </span>
         <span className="text-black bg-neutral-100 px-1.5 py-0.2 border border-black/40 text-[9px]">
-          WCAG 2.2 AA
+          ONE FOR ALL
         </span>
       </div>
 
@@ -259,7 +259,7 @@ export const HeroIllustration3D: React.FC<HeroIllustration3DProps> = ({
               <rect x="0" y="0" width="28" height="4" fill="#dfff00" />
               <rect x="34" y="0" width="56" height="4" fill="#ffffff" opacity="0.9" />
               <rect x="96" y="0" width="38" height="4" fill="#525252" />
-              
+
               {/* Syntax line 2 with Blinking Cursor */}
               <rect x="12" y="10" width="44" height="4" fill="#ffffff" opacity="0.9" />
               <rect x="62" y="10" width="30" height="4" fill="#dfff00" />
@@ -707,9 +707,7 @@ export const HeroIllustration3D: React.FC<HeroIllustration3DProps> = ({
           <span className="text-white">/</span>
           <span>MOBILE</span>
           <span className="text-white">/</span>
-          <span>GAME</span>
-          <span className="text-white">/</span>
-          <span>A11Y</span>
+          <span>ACCESSIBILITY</span>
         </div>
       </div>
     </div>
