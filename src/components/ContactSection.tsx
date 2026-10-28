@@ -10,6 +10,7 @@ export const ContactSection: React.FC = () => {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const headerRef = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
@@ -17,19 +18,50 @@ export const ContactSection: React.FC = () => {
   const formColRef = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const linksColRef = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setStatus('error');
+      setStatusMessage('[PERINGATAN]: Mohon isi semua kolom yang diperlukan (Nama, Email, dan Pesan).');
       return;
     }
 
     setStatus('submitting');
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 6000);
-    }, 800);
+    setStatusMessage('');
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${HERO_DATA.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `[Portfolio] Pesan Baru dari ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok) {
+        setStatus('success');
+        setStatusMessage('✓ Pesan berhasil terkirim ke email febriraka34@gmail.com! Terima kasih, saya akan segera merespons.');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 10000);
+      } else {
+        const errMsg = data?.message || 'Gagal mengirim pesan ke server email.';
+        throw new Error(errMsg);
+      }
+    } catch (error) {
+      console.error('Submit error:', error);
+      setStatus('error');
+      setStatusMessage('[GAGAL]: Terjadi gangguan koneksi saat mengirim pesan. Anda dapat mengirim email secara langsung ke febriraka34@gmail.com.');
+    }
   };
 
   const handleCopyEmail = () => {
@@ -119,14 +151,14 @@ export const ContactSection: React.FC = () => {
 
             {/* Status Messages */}
             {status === 'error' && (
-              <div className="bg-red-100 border-2 border-red-600 text-red-800 p-2 font-mono text-xs">
-                [PERINGATAN]: Mohon isi semua kolom yang diperlukan.
+              <div className="bg-red-100 border-2 border-red-600 text-red-800 p-2.5 font-mono text-xs leading-relaxed">
+                {statusMessage || '[PERINGATAN]: Mohon isi semua kolom yang diperlukan.'}
               </div>
             )}
 
             {status === 'success' && (
-              <div className="bg-[#ffff00] border-2 border-black text-black p-3 font-mono text-xs font-bold">
-                ✓ Pesan berhasil dikirim! Febritama Raka akan meninjau pesan Anda dalam &lt; 24 jam.
+              <div className="bg-[#ffff00] border-2 border-black text-black p-3 font-mono text-xs font-bold leading-relaxed">
+                {statusMessage}
               </div>
             )}
 
@@ -137,8 +169,18 @@ export const ContactSection: React.FC = () => {
               disabled={status === 'submitting'}
               className="w-full bg-black text-white py-3 px-4 font-mono font-bold text-xs sm:text-sm tracking-wider border-2 border-black hover:bg-neutral-800 transition active:scale-[0.99] cursor-pointer disabled:opacity-50"
             >
-              {status === 'submitting' ? 'MENGIRIM PESAN...' : 'KIRIM PESAN →'}
+              {status === 'submitting' ? 'MENGIRIM PESAN KE EMAIL...' : 'KIRIM PESAN →'}
             </button>
+
+            {/* Direct Email Link Fallback */}
+            <div className="text-center pt-1">
+              <a
+                href={`mailto:${HERO_DATA.email}?subject=Diskusi Proyek via Portfolio&body=Halo Febritama,%0D%0A%0D%0ASaya ingin berdiskusi mengenai...`}
+                className="text-neutral-500 hover:text-black underline text-[11px] font-mono transition"
+              >
+                Atau kirim langsung lewat aplikasi Email (Gmail/Outlook) ↗
+              </a>
+            </div>
           </form>
         </div>
 
