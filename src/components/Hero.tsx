@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download } from 'lucide-react';
 import { HERO_DATA } from '../data/portfolioData';
+import { HeroIllustration3D } from './HeroIllustration3D';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -8,91 +9,18 @@ interface HeroProps {
   onDownloadCvAtsClick?: () => void;
 }
 
-/** Rotating CSS 3D cube */
-const Cube3D: React.FC = () => (
-  <div className="cube-float">
-    <div className="cube-scene">
-      <div className="cube-body">
-        <div className="cube-face cube-face--front">DEV</div>
-        <div className="cube-face cube-face--back">CODE</div>
-        <div className="cube-face cube-face--left">WEB</div>
-        <div className="cube-face cube-face--right">UI</div>
-        <div className="cube-face cube-face--top"></div>
-        <div className="cube-face cube-face--bottom"></div>
-      </div>
-    </div>
-  </div>
-);
-
-/** Isometric stacked boxes */
-const IsoStack: React.FC = () => (
-  <div className="iso-stack">
-    <div className="iso-box iso-box-1" />
-    <div className="iso-box iso-box-2" />
-    <div className="iso-box iso-box-3" />
-  </div>
-);
-
-/** 4×5 animated dot grid */
-const DotGrid: React.FC = () => (
-  <div className="dot-grid">
-    {Array.from({ length: 20 }).map((_, i) => (
-      <span key={i} />
-    ))}
-  </div>
-);
-
-/** The full decorative panel shown on md+ screens */
-const DecorativePanel: React.FC = () => (
-  <div className="hidden md:flex flex-col items-center justify-center gap-8 hero-anim hero-anim-d6 select-none">
-
-    {/* Top row: dot grid + diamond */}
-    <div className="flex items-start gap-6">
-      <DotGrid />
-      <div className="flex flex-col items-center gap-4 mt-1">
-        <div className="shape-diamond" />
-        <div className="shape-bar-h" />
-      </div>
-    </div>
-
-    {/* Centre: spinning 3D cube */}
-    <Cube3D />
-
-    {/* Bottom row: iso stack + rings + bars */}
-    <div className="flex items-end gap-6">
-      <div className="flex flex-col gap-3">
-        <div className="shape-ring" />
-        <div className="flex gap-3 items-center">
-          <div className="shape-square-yellow" />
-          <div className="shape-ring-sm" />
-          <div className="shape-square-sm" />
-        </div>
-      </div>
-      <div className="flex flex-col items-center gap-2">
-        <IsoStack />
-        <div className="shape-bar-h" style={{ width: 44 }} />
-      </div>
-    </div>
-
-    {/* Caption label */}
-    <div className="font-mono text-[10px] font-bold tracking-[0.18em] text-neutral-400 uppercase">
-      [ WEB · MOBILE · GAME · WCAG 2.2 ]
-    </div>
-  </div>
-);
-
 export const Hero: React.FC<HeroProps> = ({
   onContactClick,
   onDownloadCvClick,
   onDownloadCvAtsClick,
 }) => {
   return (
-    <section id="hero" className="border-b-2 border-black px-6 py-8 sm:px-10 sm:py-12 bg-white">
-      <div className="flex items-center gap-10">
+    <section id="hero" className="border-b-2 border-black px-6 py-8 sm:px-10 sm:py-12 bg-white overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center md:items-start lg:items-center justify-between gap-8 lg:gap-12">
 
         {/* ── Left column: text content ── */}
-        <div className="flex-1 min-w-0">
-          {/* Status Badge */}
+        <div className="flex-1 min-w-0 w-full">
+          {/* Status Badge & Location */}
           <div className="mb-4 hero-anim hero-anim-d1 flex flex-wrap items-center gap-2">
             <span
               id="status-badge"
@@ -120,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({
             <span className="bg-[#0026e6] text-white font-mono text-[11px] font-bold px-2.5 py-1 uppercase tracking-wide">
               {HERO_DATA.role}
             </span>
-            <span className="bg-[#ffff00] text-black font-mono text-[11px] font-bold px-2.5 py-1 border border-black uppercase tracking-wide">
+            <span className="bg-[#dfff00] text-black font-mono text-[11px] font-bold px-2.5 py-1 border border-black uppercase tracking-wide">
               WCAG 2.2 LEVEL AA
             </span>
           </div>
@@ -168,11 +96,16 @@ export const Hero: React.FC<HeroProps> = ({
               <span>UNDUH CV (ATS)</span>
             </a>
           </div>
+
+          {/* ── Mobile-only 3D Decorative Illustration (placed below content on small screens) ── */}
+          <div className="block md:hidden w-full max-w-[340px] sm:max-w-[380px] mx-auto mt-8 pt-6 border-t-2 border-black/20 hero-anim hero-anim-d6">
+            <HeroIllustration3D isCompact={true} />
+          </div>
         </div>
 
-        {/* ── Right column: 3D decorative elements (md+) ── */}
-        <div className="hidden md:block flex-shrink-0">
-          <DecorativePanel />
+        {/* ── Desktop & Tablet: Right column 3D Low-Poly Composition ── */}
+        <div className="hidden md:block flex-shrink-0 w-[310px] lg:w-[410px] xl:w-[430px] hero-anim hero-anim-d6">
+          <HeroIllustration3D />
         </div>
 
       </div>
