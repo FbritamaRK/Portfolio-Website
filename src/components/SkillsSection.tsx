@@ -17,7 +17,7 @@ export const SkillsSection: React.FC = () => {
           03
         </span>
         <h2 className="font-mono font-bold text-base sm:text-lg tracking-wider uppercase text-black">
-          KEAHLIAN &amp; ALAT
+          KEAHLIAN &amp; PENGALAMAN PENGGUNAAN ALAT
         </h2>
       </div>
 
