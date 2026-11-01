@@ -51,9 +51,6 @@ export const Hero: React.FC<HeroProps> = ({
             <span className="bg-[#dfff00] text-black font-mono text-[11px] font-bold px-2.5 py-1 border border-black uppercase tracking-wide">
               WCAG 2.2 LEVEL AA (SKOR 60 → 95)
             </span>
-            <span className="bg-white text-black font-mono text-[11px] font-bold px-2.5 py-1 border border-black uppercase tracking-wide">
-              CUM LAUDE (IPK 3.70)
-            </span>
           </div>
 
           {/* Divider Bar */}
