@@ -86,12 +86,12 @@ export const AboutSection: React.FC = () => {
               <div className="border border-black p-3 bg-neutral-50 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <span className="font-mono text-[10px] text-neutral-500 uppercase block font-bold">SPESIALISASI</span>
                 <span className="font-mono font-bold text-xs sm:text-sm text-black block mt-0.5">Aksesibilitas Web</span>
-                <span className="font-mono text-[11px] text-neutral-700 font-bold block">WCAG 2.2 Level AA</span>
+                <span className="font-mono text-[11px] text-neutral-700 font-bold block">WCAG 2.2 AA (Skor 60 → 95)</span>
               </div>
               <div className="border border-black p-3 bg-neutral-50 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <span className="font-mono text-[10px] text-neutral-500 uppercase block font-bold">KAPABILITAS</span>
                 <span className="font-mono font-bold text-xs sm:text-sm text-black block mt-0.5">Lintas Platform</span>
-                <span className="font-mono text-[11px] text-neutral-700 font-bold block">Web · Mobile · Game Dev</span>
+                <span className="font-mono text-[11px] text-neutral-700 font-bold block">Web · Android · Game Unity</span>
               </div>
             </div>
           </div>

@@ -14,6 +14,7 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { CvModal } from './components/CvModal';
+import { downloadAtsCvFile } from './data/portfolioData';
 
 export default function App() {
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
@@ -52,6 +53,7 @@ export default function App() {
           <Hero
             onContactClick={() => scrollToSection('kontak')}
             onDownloadCvClick={() => setIsCvModalOpen(true)}
+            onDownloadCvAtsClick={downloadAtsCvFile}
           />
 
           {/* 01: Tentang Saya */}

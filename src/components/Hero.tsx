@@ -49,7 +49,10 @@ export const Hero: React.FC<HeroProps> = ({
               {HERO_DATA.role}
             </span>
             <span className="bg-[#dfff00] text-black font-mono text-[11px] font-bold px-2.5 py-1 border border-black uppercase tracking-wide">
-              WCAG 2.2 LEVEL AA
+              WCAG 2.2 LEVEL AA (SKOR 60 → 95)
+            </span>
+            <span className="bg-white text-black font-mono text-[11px] font-bold px-2.5 py-1 border border-black uppercase tracking-wide">
+              CUM LAUDE (IPK 3.70)
             </span>
           </div>
 
@@ -84,12 +87,6 @@ export const Hero: React.FC<HeroProps> = ({
               href={HERO_DATA.cvDriveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                if (onDownloadCvAtsClick) {
-                  e.preventDefault();
-                  onDownloadCvAtsClick();
-                }
-              }}
               className="bg-white text-black px-5 sm:px-6 py-3 font-mono font-bold text-xs sm:text-sm border-2 border-black hover:bg-neutral-100 transition tracking-wider cursor-pointer flex items-center gap-2 no-underline"
             >
               <Download size={15} />
