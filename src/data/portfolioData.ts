@@ -354,6 +354,7 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     score: 'Skor 559 (Menengah-Atas / Upper-Intermediate)',
     description:
       'Sertifikat kemahiran bahasa Inggris resmi yang diterbitkan oleh CILACS Universitas Islam Indonesia dengan skor 559.',
+    imageUrl: '/certificate-cept.jpg',
   },
 ];
 

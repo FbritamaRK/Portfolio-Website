@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { HERO_DATA } from '../data/portfolioData';
 import { HeroIllustration3D } from './HeroIllustration3D';
 
@@ -80,14 +80,14 @@ export const Hero: React.FC<HeroProps> = ({
               LIHAT RINGKASAN CV
             </button>
             <a
-              id="btn-unduh-cv-ats"
+              id="btn-sertifikat-drive"
               href={HERO_DATA.cvDriveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-black px-5 sm:px-6 py-3 font-mono font-bold text-xs sm:text-sm border-2 border-black hover:bg-neutral-100 transition tracking-wider cursor-pointer flex items-center gap-2 no-underline"
             >
-              <Download size={15} />
-              <span>UNDUH CV (ATS)</span>
+              <ExternalLink size={15} />
+              <span>Sertifikat</span>
             </a>
           </div>
 

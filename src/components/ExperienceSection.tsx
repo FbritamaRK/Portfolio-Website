@@ -1,6 +1,7 @@
 import React from 'react';
-import { EXPERIENCE_DATA, CERTIFICATIONS_DATA } from '../data/portfolioData';
+import { EXPERIENCE_DATA, CERTIFICATIONS_DATA, HERO_DATA } from '../data/portfolioData';
 import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
+import { ExternalLink } from 'lucide-react';
 
 export const ExperienceSection: React.FC = () => {
   const headerRef = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
@@ -99,7 +100,7 @@ export const ExperienceSection: React.FC = () => {
               key={cIdx}
               className="border-2 border-black p-4 sm:p-5 bg-neutral-50 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
-              <div>
+              <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
                   <h4 className="font-mono font-bold text-xs sm:text-sm text-black">
                     {cert.title}
@@ -113,8 +114,21 @@ export const ExperienceSection: React.FC = () => {
                 <p className="font-mono text-xs text-[#0026e6] font-bold">{cert.issuer}</p>
                 <p className="font-mono text-xs text-neutral-600 mt-1">{cert.description}</p>
               </div>
-              <div className="font-mono text-xs font-bold px-3 py-1 bg-white border border-black self-start sm:self-center whitespace-nowrap">
-                {cert.period}
+
+              <div className="flex flex-wrap sm:flex-col items-start sm:items-end gap-2.5 self-start sm:self-center shrink-0">
+                <div className="font-mono text-xs font-bold px-3 py-1 bg-white border border-black whitespace-nowrap shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  {cert.period}
+                </div>
+                <a
+                  id="btn-sertifikat-card-drive"
+                  href={HERO_DATA.cvDriveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs font-bold px-4 py-2 bg-[#ffff00] text-black border-2 border-black hover:bg-black hover:text-white transition flex items-center gap-1.5 cursor-pointer no-underline shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5"
+                >
+                  <ExternalLink size={14} />
+                  <span>Sertifikat</span>
+                </a>
               </div>
             </div>
           ))}

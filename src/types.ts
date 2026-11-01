@@ -33,6 +33,7 @@ export interface CertificationItem {
   period: string;
   score?: string;
   description: string;
+  imageUrl?: string;
 }
 
 export interface SocialLinkItem {
