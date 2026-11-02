@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({
               className="bg-white text-black px-5 sm:px-6 py-3 font-mono font-bold text-xs sm:text-sm border-2 border-black hover:bg-neutral-100 transition tracking-wider cursor-pointer flex items-center gap-2 no-underline"
             >
               <ExternalLink size={15} />
-              <span>Sertifikat</span>
+              <span>UNDUH CV(ATS)</span>
             </a>
           </div>
 
